@@ -24,40 +24,57 @@
     <section class="container mt-4 mb-5">
         <div class="row gx-5 gy-sm-5">
             <!-- left image side -->
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-md-6 col-12">
                 <img class="h-100 w-100" src="cash-money.jpg" alt="">
             </div>
             <!-- calculate section -->
-            <div class="bg col-lg-6 col-12 text-center">
+            <div class="bg col-lg-6 col-md-6  col-12 text-center">
                 <p class="fw-bold">Income</p>
                 <div>
-                    <label for="">Income:</label>
-                    <input id="totalIncome" type="number" placeholder="0">
-                </div>
-                <!-- Expenses -->
-                <div class="mt-3">
-                    <h4 class="">Expenses</h4>
-                    <div class="mt-2">
-                        <label for="">Food: </label>
-                        <input id="food-input" type="number" placeholder="0"><br><br>
-                        <label for="">Rant: </label>
-                        <input id="rant-input" type="number" placeholder="0"><br><br>
-                        <label for="">Clothes: </label>
-                        <input id="colths-input" type="number" placeholder="0">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <label for="">Income : </label>
+                        <input type="number" class="form-control w-50 " id="totalIncome" placeholder="0">
+
                     </div>
+                    <!-- Expenses -->
+                    <div class="">
+                        <h4 class="">Expenses</h4>
+                        <span id="food" class="text-danger fw-bold "></span>
+                        <div class="d-flex align-items-center justify-content-center mb-3">
+                            <label for="">Food : </label>
+                            <input type="text" class="form-control w-50 " id="food-input" placeholder="0">
+                        </div>
+
+                        <span id="rant" class="text-danger fw-bold"></span>
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <label for="">Rant : </label>
+                            <input type="text" class="form-control w-50 " id="rant-input" placeholder="0">
+
+                        </div>
+                        <span id="Clothes" class="text-danger fw-bold"></span>
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            <label for="">Clothes : </label>
+                            <input type="text" class="form-control w-50 " id="colths-input" placeholder="0">
+
+                        </div>
+                    </div>
+
                 </div>
-                <button id="cal-btn" class="mt-3 px=4 btn btn-primary">Calculate</button>
+
+                <button id="cal-btn" class="mt-3 px-4 btn btn-primary">Calculate</button>
                 <!-- total balance -->
                 <div class="mt-3">
                     <p>Total Expenses: <span id="expenses">$</span></p>
                     <p> Total Balance: <span id="total-balance">$</span></p>
+                    <span id="balance" class="text-danger fw-bold"></span>
                 </div>
                 <!-- saving -->
-                <div class="">
-                    <div class="mt-3">
-                        <label for="">Sava: </label>
-                        <input id="save-input" class="ms-3 text-center" type="number" placeholder="20">
+                <div class="mt-3">
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <label for="">Save : </label>
+                        <input type="number" class="form-control w-25 " id="save-input" placeholder="0">
                         <span class="ms-3">%</span>
+                        <span id="username" class="text-danger fw-bold"></span>
                         <button id="save-btn" class="ms-3 btn btn-primary py-2 px-4">Save</button>
                     </div>
                 </div>

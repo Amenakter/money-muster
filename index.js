@@ -8,17 +8,56 @@ function getInputValue() {
     const foodInput = document.getElementById('food-input').value;
     const rantInput = document.getElementById('rant-input').value;
     const clothesInput = document.getElementById('colths-input').value;
+    if (isNaN(foodInput) ) {
+        document.getElementById("food").innerHTML = "**It's allowed only number"
+        return true;
+    }
+    else if (foodInput < 0) {
+        document.getElementById("food").innerHTML = "**Number will be positive"
+        return true;
+    }
     
-    const totalExpInputValue = parseFloat(foodInput) +
-    parseFloat(rantInput) +
-    parseFloat(clothesInput);
+    else if (isNaN(rantInput)) {
+        document.getElementById("rant").innerHTML = "**It's allowed only number"
+        return true;
+    }
+
+    else  if (rantInput < 0) {
+        document.getElementById("rant").innerHTML = "** Number will be positive"
+        return true;
+    }
+    if (isNaN(clothesInput)) {
+        document.getElementById("Clothes").innerHTML = "** It's allowed only number "
+        return true;
+    }
+   else if (isNaN(clothesInput < 0)) {
+        document.getElementById("Clothes").innerHTML = "** Number will be positive "
+        return true;
+    }
+    else {
+        const totalExpInputValue = parseFloat(foodInput) +
+                                   parseFloat(rantInput) +
+            parseFloat(clothesInput);
+    
+        
+        
+        const expenses = document.getElementById('expenses');
+        expenses.innerText = totalExpInputValue
+
+
+
+        
+       updatebalance('total', totalExpInputValue)
+        
+    }
+    
+   
     
 // total expenses  
-  const expenses = document.getElementById('expenses');
-  expenses.innerText = totalExpInputValue
+  
 
 //total balance
- updatebalance('total',totalExpInputValue )
+
 }
 
 
@@ -45,6 +84,12 @@ function getSaveAmount() {
 }
 function updatebalance(id,totalExpInputValue) {
     const balance = document.getElementById(id + '-balance');
-    const totalIncome = document.getElementById(id +'Income').value;
-    balance.innerText = parseFloat(totalIncome) - totalExpInputValue;
+    const totalIncome = document.getElementById(id + 'Income').value;
+    if (totalIncome > totalExpInputValue) {
+        balance.innerText = parseFloat(totalIncome) - totalExpInputValue;
+    }
+    else {
+        document.getElementById('balance').innerText = 'do not have a safficient banalance'
+        return true;
+    }
 }

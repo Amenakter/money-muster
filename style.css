@@ -15,10 +15,13 @@ p{
 }
 label{
     font-weight: bold;
+    margin-right: 12px;
+   
 }
 input{
-    background-color:#cacaca ;
+    background-color:#423d3d ;
     border: none;
     outline: none;
     padding: 5px;
+    
 }
