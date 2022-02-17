@@ -8,30 +8,36 @@ function getInputValue() {
     const foodInput = document.getElementById('food-input').value;
     const rantInput = document.getElementById('rant-input').value;
     const clothesInput = document.getElementById('colths-input').value;
+    const totalIncomeValue = document.getElementById('totalIncome').value
+  
+    if (totalIncomeValue ){
+        document.getElementById("income").innerHTML = "**Don't use Negative Number"
+        return true;
+    }
     if (isNaN(foodInput) ) {
-        document.getElementById("food").innerHTML = "**It's allowed only number"
+        document.getElementById("food").innerText = "**It's allowed only number"
         return true;
     }
     else if (foodInput < 0) {
-        document.getElementById("food").innerHTML = "**Number will be positive"
+        document.getElementById("food").innerText = "**Number will be positive"
         return true;
     }
     
     else if (isNaN(rantInput)) {
-        document.getElementById("rant").innerHTML = "**It's allowed only number"
+        document.getElementById("rant").innerText = "**It's allowed only number"
         return true;
     }
 
     else  if (rantInput < 0) {
-        document.getElementById("rant").innerHTML = "** Number will be positive"
+        document.getElementById("rant").innerText = "** Number will be positive"
         return true;
     }
     if (isNaN(clothesInput)) {
-        document.getElementById("Clothes").innerHTML = "** It's allowed only number "
+        document.getElementById("Clothes").innerText = "** It's allowed only number "
         return true;
     }
    else if (clothesInput < 0) {
-        document.getElementById("Clothes").innerHTML = "** Number will be positive "
+        document.getElementById("Clothes").innerText = "** Number will be positive "
         return true;
     }
     else {
@@ -45,9 +51,11 @@ function getInputValue() {
 
       //total balance
         updatebalance('total', totalExpInputValue)
-        document.getElementById("food").innerHTML = ""
-        document.getElementById("rant").innerHTML = ""
-        document.getElementById("Clothes").innerHTML = ""
+        document.getElementById("food").innerText = ""
+        document.getElementById("rant").innerText = ""
+        document.getElementById("Clothes").innerText = ""
+        document.getElementById("income").innerText = ""
+
         
     }
 
