@@ -10,7 +10,7 @@ function getInputValue() {
     const clothesInput = document.getElementById('colths-input').value;
     const totalIncomeValue = document.getElementById('totalIncome').value
   
-    if (totalIncomeValue ){
+    if (totalIncomeValue < 0){
         document.getElementById("income").innerHTML = "**Don't use Negative Number"
         return true;
     }
