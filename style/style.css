@@ -3,17 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* heading  */
 .heading{
     color: #31A5AC;
 }
+/* background */
 .bg{
     background: #f6f4f4
 }
+/* paragraph tag */
 p{
     font-size: 18px;
     font-weight: bold;
 }
+/* for input label */
 label{
     font-weight: bold;
     margin-right: 12px;

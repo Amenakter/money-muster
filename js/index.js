@@ -89,10 +89,6 @@ function getSaveAmount() {
         }
        
     }
-   
-    
-   
-    
 
 function updatebalance(id,totalExpInputValue) {
     const balance = document.getElementById(id + '-balance');
