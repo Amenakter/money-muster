@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .heading{
     color: #31A5AC;
 }
 .bg{
-    background: #e9e9e9
+    background: #f6f4f4
 }
 p{
     font-size: 18px;
@@ -17,11 +18,4 @@ label{
     font-weight: bold;
     margin-right: 12px;
    
-}
-input{
-    background-color:#423d3d ;
-    border: none;
-    outline: none;
-    padding: 5px;
-    
 }

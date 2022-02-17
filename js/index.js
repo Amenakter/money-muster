@@ -30,33 +30,26 @@ function getInputValue() {
         document.getElementById("Clothes").innerHTML = "** It's allowed only number "
         return true;
     }
-   else if (isNaN(clothesInput < 0)) {
+   else if (clothesInput < 0) {
         document.getElementById("Clothes").innerHTML = "** Number will be positive "
         return true;
     }
     else {
+        // total expenses 
         const totalExpInputValue = parseFloat(foodInput) +
                                    parseFloat(rantInput) +
-            parseFloat(clothesInput);
-    
-        
+                                   parseFloat(clothesInput);
         
         const expenses = document.getElementById('expenses');
         expenses.innerText = totalExpInputValue
 
-
-
-        
-       updatebalance('total', totalExpInputValue)
+      //total balance
+        updatebalance('total', totalExpInputValue)
+        document.getElementById("food").innerHTML = ""
+        document.getElementById("rant").innerHTML = ""
+        document.getElementById("Clothes").innerHTML = ""
         
     }
-    
-   
-    
-// total expenses  
-  
-
-//total balance
 
 }
 
@@ -70,26 +63,48 @@ document.getElementById('save-btn').addEventListener('click', function () {
 function getSaveAmount() {
     const saveInput = document.getElementById('save-input').value;
     const totalIncome = document.getElementById('totalIncome').value;
-    const totalSaved = parseFloat(totalIncome) / 100 * parseFloat(saveInput);
+    if (saveInput < 0) {
+        document.getElementById('save-percentage').innerText = "it's not a valid saving rang"
+        return
+    }
+    else {
+        document.getElementById('save-percentage').innerText = ""
+ }
     
-    //saving Amount 
-    const saveAmount = document.getElementById('save-amount')
-    saveAmount.innerText = totalSaved;
+         const totalSaved = parseFloat(totalIncome) / 100 * parseFloat(saveInput);
+    
+        //saving Amount
+        const remaingBalance = document.getElementById('remaing-balance')
+        const totalBalance = document.getElementById('total-balance').innerText
+        if (totalBalance < totalSaved) {
+            document.getElementById('save').innerText = "You haven't enough money to save"
+        
+        }
+        else {
+            // remainig balance
+            const saveAmount = document.getElementById('save-amount')
+            saveAmount.innerText = totalSaved;
+            remaingBalance.innerText = parseFloat(totalBalance) - totalSaved
+            document.getElementById('save').innerText = "";
+        }
+       
+    }
+   
+    
+   
+    
 
-    // remainig balance
-    const remaingBalance = document.getElementById('remaing-balance')
-    const totalBalance = document.getElementById('total-balance').innerText
-    remaingBalance.innerText = parseFloat(totalBalance) - totalSaved
-
-}
 function updatebalance(id,totalExpInputValue) {
     const balance = document.getElementById(id + '-balance');
     const totalIncome = document.getElementById(id + 'Income').value;
-    if (totalIncome > totalExpInputValue) {
+    if (totalIncome < totalExpInputValue) {
         balance.innerText = parseFloat(totalIncome) - totalExpInputValue;
+        document.getElementById('balance').innerText = 'Your balance is over'
+       
     }
     else {
-        document.getElementById('balance').innerText = 'do not have a safficient banalance'
-        return true;
+        balance.innerText = parseFloat(totalIncome) - totalExpInputValue;
+        document.getElementById('balance').innerText = '';
     }
+
 }
